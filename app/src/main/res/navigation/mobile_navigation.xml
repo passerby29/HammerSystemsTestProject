@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_menu"
-        android:name="dev.passerby.hammer_test.menu.MenuFragment"
+        android:name="dev.passerby.hammer_test.fragments.MenuFragment"
         android:label="@string/title_menu"
         tools:layout="@layout/fragment_menu" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="dev.passerby.hammer_test.profile.ProfileFragment"
+        android:name="dev.passerby.hammer_test.fragments.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="dev.passerby.hammer_test.cart.CartFragment"
+        android:name="dev.passerby.hammer_test.fragments.CartFragment"
         android:label="@string/title_cart"
         tools:layout="@layout/fragment_cart" />
 </navigation>

@@ -1,4 +1,4 @@
-package dev.passerby.hammer_test.menu
+package dev.passerby.hammer_test.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dev.passerby.hammer_test.databinding.FragmentMenuBinding
+import dev.passerby.hammer_test.viewmodels.MenuViewModel
 
 class MenuFragment : Fragment() {
 

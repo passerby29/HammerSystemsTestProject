@@ -1,4 +1,4 @@
-package dev.passerby.hammer_test.menu
+package dev.passerby.hammer_test.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
