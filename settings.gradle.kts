@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HammerSystemsTestProject"
 include(":app")
- 
+include(":domain")
