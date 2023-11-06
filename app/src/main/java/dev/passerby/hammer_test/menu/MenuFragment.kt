@@ -1,4 +1,4 @@
-package dev.passerby.hammer_test.ui.home
+package dev.passerby.hammer_test.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
