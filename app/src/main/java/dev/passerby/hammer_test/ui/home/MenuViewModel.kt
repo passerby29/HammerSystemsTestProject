@@ -8,7 +8,7 @@ import dev.passerby.domain.usecases.GetPizzaListUseCase
 import dev.passerby.domain.usecases.LoadPizzasUseCase
 import kotlinx.coroutines.launch
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class MenuViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = MainRepositoryImpl(application)
     private val getPizzaListUseCase = GetPizzaListUseCase(repository)

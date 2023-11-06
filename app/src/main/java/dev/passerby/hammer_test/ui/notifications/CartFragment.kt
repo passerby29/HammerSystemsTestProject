@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import dev.passerby.hammer_test.databinding.FragmentNotificationsBinding
+import dev.passerby.hammer_test.databinding.FragmentCartBinding
 
-class NotificationsFragment : Fragment() {
+class CartFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentCartBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val cartViewModel =
+            ViewModelProvider(this).get(CartViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentCartBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        cartViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
