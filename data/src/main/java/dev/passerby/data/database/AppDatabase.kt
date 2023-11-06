@@ -17,6 +17,8 @@ import dev.passerby.data.models.db.PizzaDbModel
 @TypeConverters(JsonConverters::class)
 abstract class AppDatabase: RoomDatabase() {
 
+    abstract fun pizzaDao(): PizzaDao
+
     companion object {
 
         private var db: AppDatabase? = null
