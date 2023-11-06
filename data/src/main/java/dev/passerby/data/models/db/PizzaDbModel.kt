@@ -1,7 +1,12 @@
-package dev.passerby.domain.models
+package dev.passerby.data.models.db
 
-data class PizzaModel(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity("pizzas")
+data class PizzaDbModel(
     val category: Int,
+    @PrimaryKey
     val id: Int,
     val imageUrl: String,
     val price: Int,

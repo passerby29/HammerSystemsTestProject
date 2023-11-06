@@ -5,7 +5,7 @@ import dev.passerby.domain.models.PizzaModel
 
 interface MainRepository {
 
-    fun getPizzaList(): LiveData<PizzaModel>
+    fun getPizzaList(): LiveData<List<PizzaModel>>
 
     suspend fun loadPizzas()
 }
