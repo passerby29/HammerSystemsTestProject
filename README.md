@@ -38,5 +38,5 @@
 <div align = "center">
     <img src="res/screen1.jpg" width="180" alt="Экран с баннерами">
     <img src="res/screen2.jpg" width="180" alt="Экран без баннеров">
-![](res%2FappVideo.gif)
 </div> 
+![](res%2FappVideo.gif)
