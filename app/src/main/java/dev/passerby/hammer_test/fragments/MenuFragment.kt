@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ahmadhamwi.tabsync.TabbedListMediator
-import dev.passerby.domain.models.PizzaModel
 import dev.passerby.hammer_test.Category
 import dev.passerby.hammer_test.R
 import dev.passerby.hammer_test.adapters.CategoriesAdapter
 import dev.passerby.hammer_test.adapters.PizzaListAdapter
 import dev.passerby.hammer_test.databinding.FragmentMenuBinding
 import dev.passerby.hammer_test.viewmodels.MenuViewModel
+
 
 class MenuFragment : Fragment() {
 
@@ -29,8 +29,12 @@ class MenuFragment : Fragment() {
     private lateinit var pizzaListAdapter: PizzaListAdapter
     private lateinit var categoriesAdapter: CategoriesAdapter
     private var categoriesList = mutableListOf<Category>()
-    private var index = 0
-    private val categories = listOf<String>("Category1", "Category2")
+    private val categories = listOf(
+        "Category1", "Category2",
+        "Category1", "Category2",
+        "Category1", "Category2",
+        "Category1", "c",
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -75,15 +79,27 @@ class MenuFragment : Fragment() {
     private fun initTabLayout() {
         for (category in categories) {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(category))
-            binding.tabLayout.setSelectedTabIndicatorColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.black
-                )
-            )
-            binding.tabLayout.setTabTextColors(R.color.purple_700, R.color.purple_500)
+//            for (i in categories.indices) {
+//                binding.tabLayout.getTabAt(i)?.customView = prepareTabView(i)
+//            }
+//            binding.tabLayout.setSelectedTabIndicatorColor(
+//                ContextCompat.getColor(
+//                    requireContext(),
+//                    R.color.color_navigation_icons
+//                )
+//            )
+//            binding.tabLayout.setTabTextColors(R.color.white, 0)
         }
     }
+
+
+    private fun prepareTabView(pos: Int): View {
+        val view: View = layoutInflater.inflate(R.layout.item_custom_tab, null)
+        val tv_title = view.findViewById<TextView>(R.id.txt)
+        tv_title.text = categories[pos]
+        return view
+    }
+
 
     private fun initRecycler() {
         pizzaListAdapter = PizzaListAdapter(requireContext())

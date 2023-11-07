@@ -6,8 +6,18 @@
     </style>
 
     <style name="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">#F1F1F1</item>
         <item name="titleTextColor">@color/black</item>
         <item name="subtitleTextColor">@color/black</item>
+    </style>
+
+    <style name="SelectedTabTextAppearance">
+        <item name="android:fontFamily">@font/sf_ui_display_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="UnselectedTabTextAppearance">
+        <item name="android:fontFamily">@font/sf_ui_display</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

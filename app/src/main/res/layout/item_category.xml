@@ -6,6 +6,7 @@
     android:paddingVertical="8dp"
     android:clipToPadding="false"
     android:clipChildren="false"
+    android:background="#F1F1F1"
     android:layout_height="wrap_content">
 
     <TextView

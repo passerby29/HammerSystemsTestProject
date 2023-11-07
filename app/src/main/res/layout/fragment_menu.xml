@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="#F1F1F1"
     tools:context=".fragments.MenuFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -70,7 +71,7 @@
                 <androidx.coordinatorlayout.widget.CoordinatorLayout
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/white"
+                    android:background="#F1F1F1"
                     app:layout_collapseMode="pin">
 
                     <TextView
@@ -97,15 +98,19 @@
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginTop="24dp"
                     android:layout_gravity="bottom"
+                    android:layout_marginTop="24dp"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="16dp"
                     app:layout_collapseMode="pin"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabBackground="@drawable/item_tab_indicator_selector"
+                    app:tabIndicator="@null"
                     app:tabMode="scrollable"
+                    app:tabRippleColor="@null"
+                    app:tabSelectedTextAppearance="@style/SelectedTabTextAppearance"
+                    app:tabSelectedTextColor="#FD3A69"
+                    app:tabTextAppearance="@style/UnselectedTabTextAppearance"
+                    app:tabTextColor="#C3C4C9"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
