@@ -14,7 +14,7 @@ class MenuViewModel(application: Application) : AndroidViewModel(application) {
     private val getPizzaListUseCase = GetPizzaListUseCase(repository)
     private val loadPizzasUseCase = LoadPizzasUseCase(repository)
 
-    val pizzaList = getPizzaListUseCase()
+    var pizzaList = getPizzaListUseCase()
 
     init {
         viewModelScope.launch {

@@ -25,8 +25,9 @@ class PizzaListAdapter(private val context: Context) :
         with(binding) {
             Glide.with(context).load(item.imageUrl).into(pizzaMainImageView)
             pizzaNameTextView.text = item.title
-            pizzaDescriptionTextView.text = item.sizes.toString()
-            pizzaPriceButton.text = String.format(context.getString(R.string.pizza_price_placeholder), item.price)
+            pizzaDescriptionTextView.text = item.ingredients
+            pizzaPriceButton.text =
+                String.format(context.getString(R.string.pizza_price_placeholder), item.price)
         }
     }
 }

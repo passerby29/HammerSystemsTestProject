@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import dev.passerby.data.converters.JsonConverters
 import dev.passerby.data.models.db.PizzaDbModel
@@ -12,10 +11,10 @@ import dev.passerby.data.models.db.PizzaDbModel
 @Database(
     entities = [PizzaDbModel::class],
     exportSchema = false,
-    version = 1
+    version = 2
 )
 @TypeConverters(JsonConverters::class)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun pizzaDao(): PizzaDao
 

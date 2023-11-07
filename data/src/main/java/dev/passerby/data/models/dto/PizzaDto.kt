@@ -12,6 +12,8 @@ data class PizzaDtoItem(
     val id: Int,
     @SerializedName("imageUrl")
     val imageUrl: String,
+    @SerializedName("ingredients")
+    val ingredients: String,
     @SerializedName("price")
     val price: Int,
     @SerializedName("rating")
@@ -19,7 +21,5 @@ data class PizzaDtoItem(
     @SerializedName("sizes")
     val sizes: List<Int>,
     @SerializedName("title")
-    val title: String,
-    @SerializedName("types")
-    val types: List<Int>
+    val title: String
 )
