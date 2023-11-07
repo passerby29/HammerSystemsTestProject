@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ahmadhamwi.tabsync.TabbedListMediator
@@ -30,10 +29,10 @@ class MenuFragment : Fragment() {
     private lateinit var categoriesAdapter: CategoriesAdapter
     private var categoriesList = mutableListOf<Category>()
     private val categories = listOf(
-        "Category1", "Category2",
-        "Category1", "Category2",
-        "Category1", "Category2",
-        "Category1", "c",
+        getString(R.string.pizza_category_name),
+        getString(R.string.combo_category_name),
+        getString(R.string.desserts_category_name),
+        getString(R.string.drinks_category_name)
     )
 
     override fun onCreateView(
@@ -48,23 +47,15 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
-        viewModel.pizzaList.observe(viewLifecycleOwner) {
-            categoriesList = mutableListOf(
-                Category(
-                    "Пицца",
-                    it,
-                    pos = 1
-                ),
-                Category(
-                    "Остальное",
-                    it,
-                    pos = 2
-                ),
-            )
-            categoriesAdapter.submitList(categoriesList)
-        }
         initTabLayout()
         initMediator()
+
+        viewModel.pizzaList.observe(viewLifecycleOwner) {
+            for (i in categories.indices) {
+                categoriesList.add(Category(categories[i], it, i))
+            }
+            categoriesAdapter.submitList(categoriesList)
+        }
     }
 
     private fun initMediator() {
@@ -79,25 +70,7 @@ class MenuFragment : Fragment() {
     private fun initTabLayout() {
         for (category in categories) {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(category))
-//            for (i in categories.indices) {
-//                binding.tabLayout.getTabAt(i)?.customView = prepareTabView(i)
-//            }
-//            binding.tabLayout.setSelectedTabIndicatorColor(
-//                ContextCompat.getColor(
-//                    requireContext(),
-//                    R.color.color_navigation_icons
-//                )
-//            )
-//            binding.tabLayout.setTabTextColors(R.color.white, 0)
         }
-    }
-
-
-    private fun prepareTabView(pos: Int): View {
-        val view: View = layoutInflater.inflate(R.layout.item_custom_tab, null)
-        val tv_title = view.findViewById<TextView>(R.id.txt)
-        tv_title.text = categories[pos]
-        return view
     }
 
 

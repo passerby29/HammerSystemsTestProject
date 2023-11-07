@@ -5,4 +5,9 @@
     <string name="title_profile">Профиль</string>
     <string name="title_cart">Корзина</string>
     <string name="pizza_price_placeholder">от %s р</string>
+    <string name="city_placeholder">Москва</string>
+    <string name="pizza_category_name">Пицца</string>
+    <string name="combo_category_name">Комбо</string>
+    <string name="desserts_category_name">Десерты</string>
+    <string name="drinks_category_name">Напитки</string>
 </resources>

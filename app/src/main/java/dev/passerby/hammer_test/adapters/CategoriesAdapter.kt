@@ -19,12 +19,10 @@ class CategoriesAdapter(private val context: Context) :
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val item = getItem(position)
-        val binding = holder.binding
         val pizzaAdapter = PizzaListAdapter(context)
-        with(binding) {
-            categoryNameTextView.text = item.name
-            recyclerView.adapter = pizzaAdapter
-        }
+
+        holder.binding.recyclerView.adapter = pizzaAdapter
+
         pizzaAdapter.submitList(item.items)
     }
 }
