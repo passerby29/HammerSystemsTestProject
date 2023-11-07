@@ -35,8 +35,8 @@
 
 ## Скриншоты
 <div align = "center">
-    <img src="res/screen1.jpg" width="180" alt="Экран с баннерами">
-    <img src="res/screen2.jpg" width="180" alt="Экран без баннеров">
+    <img src="res/screen2.jpg" width="180" alt="Экран с баннерами">
+    <img src="res/screen1.jpg" width="180" alt="Экран без баннеров">
   <img src="https://github.com/passerby29/HammerSystemsTestProject/blob/master/res/appVideo.gif" width=180>
 </div> 
 
