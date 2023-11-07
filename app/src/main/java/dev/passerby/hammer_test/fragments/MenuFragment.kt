@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmadhamwi.tabsync.TabbedListMediator
 import dev.passerby.hammer_test.Category
 import dev.passerby.hammer_test.R
 import dev.passerby.hammer_test.adapters.CategoriesAdapter
-import dev.passerby.hammer_test.adapters.PizzaListAdapter
 import dev.passerby.hammer_test.databinding.FragmentMenuBinding
 import dev.passerby.hammer_test.viewmodels.MenuViewModel
 
@@ -25,15 +25,9 @@ class MenuFragment : Fragment() {
         ViewModelProvider(this)[MenuViewModel::class.java]
     }
 
-    private lateinit var pizzaListAdapter: PizzaListAdapter
     private lateinit var categoriesAdapter: CategoriesAdapter
     private var categoriesList = mutableListOf<Category>()
-    private val categories = listOf(
-        getString(R.string.pizza_category_name),
-        getString(R.string.combo_category_name),
-        getString(R.string.desserts_category_name),
-        getString(R.string.drinks_category_name)
-    )
+    private var categories = listOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,15 +40,25 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        categories = listOf(
+            getString(R.string.pizza_category_name),
+            getString(R.string.combo_category_name),
+            getString(R.string.desserts_category_name),
+            getString(R.string.drinks_category_name)
+        )
+
         initRecycler()
         initTabLayout()
         initMediator()
 
         viewModel.pizzaList.observe(viewLifecycleOwner) {
             for (i in categories.indices) {
-                categoriesList.add(Category(categories[i], it, i))
+                if (it.isNotEmpty()) {
+                    categoriesList.add(Category(categories[i], it, i))
+
+                }
             }
-            categoriesAdapter.submitList(categoriesList)
+            categoriesAdapter.submitList(categoriesList.toList())
         }
     }
 
@@ -75,9 +79,12 @@ class MenuFragment : Fragment() {
 
 
     private fun initRecycler() {
-        pizzaListAdapter = PizzaListAdapter(requireContext())
         categoriesAdapter = CategoriesAdapter(requireContext())
-        binding.recyclerView.adapter = categoriesAdapter
+        binding.recyclerView.apply {
+            adapter = categoriesAdapter
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        }
     }
 
 
