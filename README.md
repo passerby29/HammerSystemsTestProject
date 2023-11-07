@@ -38,5 +38,6 @@
 <div align = "center">
     <img src="res/screen1.jpg" width="180" alt="Экран с баннерами">
     <img src="res/screen2.jpg" width="180" alt="Экран без баннеров">
-  ![]([https://github.com/passerby29/Game15/blob/master/res/game15.gif](https://github.com/passerby29/HammerSystemsTestProject/blob/master/res/appVideo.gif))
 </div> 
+  ![](https://github.com/passerby29/HammerSystemsTestProject/blob/master/res/appVideo.gif)
+
