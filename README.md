@@ -39,5 +39,6 @@
     <img src="res/screen1.jpg" width="180" alt="Экран с баннерами">
     <img src="res/screen2.jpg" width="180" alt="Экран без баннеров">
 </div> 
-  ![](https://github.com/passerby29/HammerSystemsTestProject/blob/master/res/appVideo.gif)
+
+![](https://github.com/passerby29/HammerSystemsTestProject/blob/master/res/appVideo.gif)
 
